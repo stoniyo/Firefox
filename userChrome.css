@@ -1,0 +1,328 @@
+
+/* Do not remove the @namespace line -- it's required for correct functioning */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+
+
+/* Custom Width for Address Bar */
+/* #urlbar {max-width: 500px !important} */
+
+
+/* Hide the "label" text (bookmark and not folder name) */
+/* #PersonalToolbar .bookmark-item:not([container="true"]) .toolbarbutton-text {
+  display: none !important;
+}
+*/
+
+
+/* Prevent toolbars from showing in Fullscreen when moving the mouse up */
+#navigator-toolbox[inFullscreen="true"] {
+    display: none !important;
+}
+
+
+/* Change the Background Color of the Link Box */
+/* The link box is the popup URL text box which appears at the bottom of the screen whenever you hover your mouse over a hyperlink. This tweak changes its background color. */
+.statuspanel-label[value=""] {display: none !important;}
+.statuspanel-label:not([value=""]){opacity: 1 !important;
+-moz-transition-property: opacity: 0 !important;
+-moz-transition-delay: 0ms !important;} 
+#main-window[sizemode="normal"]:not([inFullscreen])
+.statuspanel-inner{margin: 0 1px !important;}
+.statuspanel-label {color: Windows Text !important;
+border-color: Transparent !important;
+/* --> */ background: #C4EAFD !important;}
+
+
+/* Edit the Bookmarks panel - the panel when bookmarking a website */
+#editBookmarkPanel {
+width: 500px !important;
+/* height: 300px !important; */
+}
+#editBMPanel_keywordRow,
+#editBMPanel_locationRow,
+#editBMPanel_descriptionRow, 
+#editBMPanel_loadInSidebarCheckbox {
+  visibility: visible !important;
+}
+
+
+/* Hide margins at the end of each bookmark toolbar icon, and set to 3px */
+toolbarbutton.bookmark-item .toolbarbutton-icon {
+	margin-inline-end: 0 !important;
+	margin:0 3px !important;
+}
+
+
+/* Hide some elements from the Firefox context menu 
+   (elements description: https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Firefox_menus) */
+#context-back,
+#context-forward,
+#context-reload,
+#context-stop,
+#context-sep-navigation,
+#context-openlinkintab,
+#context-bookmarklink,
+#context-sendlink,
+#context-sendimage,
+#context-setDesktopBackground,
+#context-bookmarkpage,
+#context-sendpage,
+#context-cut,
+#context-delete,
+#context_sendTabToDevice_separator,
+#context_sendTabToDevice,
+#context-sep-sendpagetodevice,
+#context-sendpagetodevice,
+#context-sep-sendlinktodevice,
+#context-sendlinktodevice,
+#_cd7e22de-2e34-40f0-aeff-cec824cbccac__1,							/*  In My Pocket Extension */
+#_cd7e22de-2e34-40f0-aeff-cec824cbccac__2,							/*  In My Pocket Extension */
+#_cd7e22de-2e34-40f0-aeff-cec824cbccac__inmypocket-add-item,		/*  In My Pocket Extension */
+/* menu.menu-iconic:nth-child(91),									/*  In My Pocket Extension, Context Search Extension */
+#printedit-we_dw-dev_1,
+#printedit-we_dw-dev_2,
+#printedit-we_dw-dev_3 {
+   display: none !important;
+}
+
+
+/* Only show tab close button on hover */
+.tabbrowser-tab:not([pinned]) .tab-close-button { display: none !important; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button { display: -moz-box !important; }
+
+
+
+/* Move the hamburger three-lines menu to the left, before the back button */
+/* #PanelUI-button{ -moz-box-ordinal-group: 0} */
+
+
+/* Move the hamburger menu to the top left, before the first tab */
+#PanelUI-button {
+  -moz-box-ordinal-group: 0;
+  border-left: none !important;
+  position: absolute;
+}
+
+:root[uidensity=compact] #PanelUI-button {
+  margin-top: -28px;
+}
+
+#PanelUI-button {
+  margin-top: -30px;
+}
+
+:root[uidensity=touch] #PanelUI-button {
+  margin-top: -36px;
+}
+
+#TabsToolbar {
+  /* Ensure the padding is always present even when maximized */
+  padding-inline-start: 40px !important;
+}
+/* --- */
+
+
+
+/* Change the color behind the hamburger menu */
+#PanelUI-menu-button {
+/*  opacity: 1 !important; */
+  background-color: #bde6ff !important;
+}
+
+
+/* Remove the "Sign in to sync" from the top of the hamburger menu */
+#appMenu-fxa-container, #appMenu-fxa-container + toolbarseparator {
+  display: none !important;
+}
+
+
+
+/* Give the location bar a dark background when in private browsing mode */
+#main-window[privatebrowsingmode="temporary"] #urlbar
+{
+  background: #25003E !important;
+  color: white !important;
+}
+
+
+/* Tab line matches container color, show on hover on background tabs */
+.tabbrowser-tab[usercontextid] .tab-line{
+  background-color:var(--identity-tab-color)!important;
+}
+
+.tabbrowser.tab[usercontextid] .tab-line {
+  background:var(--identity-tab-color) !important;
+}
+
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-bottom-line {
+  background: none !important;
+}
+/* --- */
+
+
+
+/* usercontext colors */
+.tab-bottom-line{
+  display:none!important;
+}
+.tabbrowser-tab[usercontextid] .tab-line{
+  background:var(--identity-tab-color)!important;
+  transform:scaleX(.8)!important;
+  opacity:.7!important;
+  height:3px!important;
+  border-radius:0 0 2px 2px!important;
+}
+.tabbrowser-tab[usercontextid][pinned] .tab-line{
+  transform:scaleX(.55)!important;
+}
+.tabbrowser-tab[usercontextid]:not([visuallyselected]):hover .tab-line{
+  border-radius:0!important;
+  height:2px!important;
+  transform:scaleX(1)!important;
+  opacity:.8!important;
+}
+.tabbrowser-tab[usercontextid][visuallyselected] .tab-line{
+  border-radius:0!important;
+  height:2px!important;
+  transform:scaleX(1)!important;
+  opacity:1!important;
+}
+.tabbrowser-tab{
+  --tab-loading-fill:Highlight!important;
+}
+.tabbrowser-tab[usercontextid]{
+  --tab-loading-fill:var(--identity-tab-color)!important;
+}
+*/
+ 
+
+/* Container Tabs Improvement */
+#userContext-icons{
+  background:var(--identity-tab-color)!important;
+  margin:auto 3px!important;
+  border-radius:2px!important;
+  padding:0 2px 0 5px!important;
+}
+#userContext-label{
+  color:#fff!important;
+}
+#userContext-indicator{
+  fill:#fff!important;
+  margin-right:2px!important;
+}
+#userContext-indicator[data-identity-icon="circle"]{
+  display:none!important;
+}
+/* --- */
+
+
+ /* Hide the ...-sign at the end of the address bar */
+#pageActionButton {
+    display: none !important;
+}
+
+
+/* remove the blank space to the left of the first tab */
+.titlebar-placeholder[type="pre-tabs"] { 
+	display:none !important; 
+}
+
+
+/* remove the blank space to the right of the last tab */
+/*
+.titlebar-placeholder[type="post-tabs"] { 
+	display:none !important; 
+}
+*/
+
+
+/* remove empty space around a favicon in the tabs */
+.tab-icon-image:not([pinned]) {			/* distance between favicon and title-text */
+    margin-right: 3px!important;
+}
+.tab-content {							/* distance to the tab-borders */
+    padding-left: 6px!important;
+    padding-right: 7px!important;
+}
+
+
+
+/* Hide Top Items on Bookmark Menu Button drop-down */
+#BMB_viewBookmarksSidebar, 
+#BMB_bookmarksShowAllTop,
+#BMB_bookmarksShowAllTop + menuseparator, 
+#BMB_recentBookmarks, 
+#BMB_recentBookmarks + menuseparator, 
+#BMB_bookmarksToolbar, 
+/* #BMB_unsortedBookmarks, 
+#BMB_mobileBookmarks + menuseparator, */
+#BMB_mobileBookmarks {
+  display: none !important;
+}
+
+
+
+/* Colored folders for bookmark sidebar, toolbar, menu button */
+  /* Standard folder */
+#bookmarks-view treechildren::-moz-tree-image(container),
+#PlacesToolbarItems toolbarbutton[container="true"] .toolbarbutton-icon,
+#PlacesToolbarItems menu[container="true"] .menu-iconic-left,
+#BMB_bookmarksPopup menu[container="true"] .menu-iconic-icon {
+  fill: #e6b800 !important; /* slightly muted gold */
+}
+
+
+
+/* Remove Firefox-Favicon from Blank New Tabs */
+.tabbrowser-tab[label="New Tab"] .tab-icon-image {  
+  display: none !important;  
+}
+
+
+/* change the colors of the tabs */
+/*
+#TabsToolbar .tabbrowser-tab[selected] {   			// active tab
+    background-color: #b3e3ff !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+#TabsToolbar .tabbrowser-tab {						// inactive tab(s) 
+    background: #bde7ff !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+#TabsToolbar .tab-background {						// remove the transparency of the active tab
+    background: transparent !important;
+}
+*/
+
+
+/* change the color of the text on active and inactive tabs */
+/* Change tabs' text color */
+/*
+#TabsToolbar .tabbrowser-tab {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+*/
+/* Active tab */
+#TabsToolbar .tabbrowser-tab[selected="true"] {
+  color: #000080 !important;
+  text-shadow: none !important;
+}
+
+
+/* adding space above the tabs toolbar */
+/*
+window #TabsToolbar {
+    margin-top: 1px !important;
+}
+*/
+
+
+/* Remove the menu bar line from v58 */
+#nav-bar{
+    border: none !important;
+    box-shadow: none !important;
+} 
