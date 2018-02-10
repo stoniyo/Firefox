@@ -75,14 +75,7 @@ toolbarbutton.bookmark-item .toolbarbutton-icon {
 #context-sep-sendpagetodevice,
 #context-sendpagetodevice,
 #context-sep-sendlinktodevice,
-#context-sendlinktodevice,
-#_cd7e22de-2e34-40f0-aeff-cec824cbccac__1,							/*  In My Pocket Extension */
-#_cd7e22de-2e34-40f0-aeff-cec824cbccac__2,							/*  In My Pocket Extension */
-#_cd7e22de-2e34-40f0-aeff-cec824cbccac__inmypocket-add-item,		/*  In My Pocket Extension */
-/* menu.menu-iconic:nth-child(91),									/*  In My Pocket Extension, Context Search Extension */
-#printedit-we_dw-dev_1,
-#printedit-we_dw-dev_2,
-#printedit-we_dw-dev_3 {
+#context-sendlinktodevice {
    display: none !important;
 }
 
