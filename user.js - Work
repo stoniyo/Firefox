@@ -1,0 +1,58 @@
+user_pref("browser.link.open_newwindow", 3);
+user_pref("browser.link.open_newwindow.restriction", 0);
+user_pref("browser.search.openintab", true);
+user_pref("browser.showQuitWarning", true);
+user_pref("browser.tabs.closeWindowWithLastTab", false);
+user_pref("browser.tabs.delayHidingAudioPlayingIconMS", 0);
+user_pref("browser.tabs.loadInBackground", true); // Do not focus new tabs opened from links (default: true)
+user_pref("browser.tabs.insertRelatedAfterCurrent", false);
+user_pref("browser.urlbar.autoFill", false);
+user_pref("browser.urlbar.autoFill.typed", false);
+user_pref("browser.urlbar.formatting.enabled", false);
+user_pref("browser.urlbar.matchBuckets", "general:5,suggestion:4");  // Change the search bar results order to give you history results before suggestion results
+user_pref("browser.urlbar.maxRichResults", 14);
+user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.openpage", false);
+user_pref("browser.urlbar.suggest.searches", true);
+user_pref("browser.urlbar.trimURLs", false);
+user_pref("dom.allow_scripts_to_close_windows", false);
+user_pref("extensions.getAddons.showPane", false); // hide "Get Add-ons" panel (uses Google Analytics)
+user_pref("extensions.pocket.enabled", false);
+user_pref("full-screen-api.transition-duration.enter", "0");
+user_pref("full-screen-api.transition-duration.leave", "0");
+user_pref("full-screen-api.warning.timeout", 0);
+user_pref("general.warnOnAboutConfig", false);
+user_pref("layout.frame_rate.precise", true); // smoother scolling
+user_pref("layout.word_select.eat_space_to_next_word", false); // highlight only the word on doubleclick and not the space after it
+user_pref("lightweightThemes.update.enabled", false); // disable auto updating of personas (themes)
+user_pref("network.IDN_show_punycode", true); // don't convert Punycode into into Unicode strings
+user_pref("privacy.popups.disable_from_plugins", 3);  // To get around the default popup blocker, some sites use Flash or Java applets to open unrequested windows. 3: Block all plugin initiated popups, even those on whitelisted sites
+user_pref("toolkit.cosmeticAnimations.enabled", false); // disabling all animations
+user_pref("zoom.maxPercent", 10000);
+user_pref("zoom.minPercent", 1);
+
+// printing headers and footers
+/* 
+values:
+&P = page number
+&PT = page number with total number of pages
+&U = the URL of the page
+&D = the date and time
+&T = the title of the page 
+*/
+user_pref("print.print_headerleft", "");
+user_pref("print.print_headercenter", "");
+user_pref("print.print_headerright", "");
+user_pref("print.print_footerleft", "&U");
+user_pref("print.print_footercenter", "");
+user_pref("print.print_footerright", "");
+
+// Auto selection of items to delete with Ctrl-Shift-Del. True means the data set is selected, false it is not.
+user_pref("privacy.cpd.cache", true);
+user_pref("privacy.cpd.cookies", true);
+user_pref("privacy.cpd.downloads", true);
+user_pref("privacy.cpd.formdata", true);
+user_pref("privacy.cpd.history", true);
+user_pref("privacy.cpd.offlineApps", true);
+user_pref("privacy.cpd.sessions", true);
+user_pref("privacy.cpd.siteSettings", true);
